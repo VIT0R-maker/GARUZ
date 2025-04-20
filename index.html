@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Garuz - Loja Virtual Shopee</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Cabeçalho -->
+  <header class="bg-black text-white py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div>
+        <img src="logo.png" alt="Logo Garuz" class="logo">
+      </div>
+      <nav>
+        <a href="#home" class="px-4 hover:text-gray-300">Início</a>
+        <a href="#produto" class="px-4 hover:text-gray-300">Produto</a>
+        <a href="#sobre" class="px-4 hover:text-gray-300">Sobre</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Seção Hero -->
+  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white">
+    <div class="bg-black bg-opacity-60 p-8 rounded-lg">
+      <h1 class="text-5xl font-bold mb-4">Camiseta Garuz Minimalista</h1>
+      <p class="text-xl mb-6">Estilo Urbano e Conforto Total</p>
+      <a href="https://shopee.com.br/your-store" target="_blank" class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Compre Agora na Shopee</a>
+    </div>
+  </section>
+
+  <!-- Seção Detalhes do Produto -->
+  <section id="produto" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Camiseta Masculina Garuz Minimalista</h2>
+      <div class="flex flex-col md:flex-row items-center gap-8">
+        <div class="w-full md:w-1/2">
+          <img src="camisa-preta.png" alt="Camiseta Preta" class="rounded-lg shadow-lg gallery-img">
+        </div>
+        <div class="w-full md:w-1/2">
+          <h3 class="text-2xl font-semibold mb-4">Estilo Urbano e Conforto Total</h3>
+          <p class="text-gray-700 mb-4">
+            Descubra a Camiseta Masculina Garuz Minimalista, a peça perfeita para quem busca estilo e conforto no dia a dia. Feita com 100% algodão de alta qualidade, ela oferece um toque macio, leveza e respirabilidade, ideal para o clima brasileiro.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-6">
+            <li>Material: 100% Algodão</li>
+            <li>Estampa: DTF de alta qualidade</li>
+            <li>Modelagem: Slim fit</li>
+            <li>Cores: Preto e Branco</li>
+            <li>Tamanhos: P, M, G, GG</li>
+          </ul>
+          <p class="text-gray-700 mb-4">
+            <strong>Preço:</strong> De R$55,00 por <strong>R$41,80 (24% OFF)</strong><br>
+            <strong>Estoque Limitado!</strong>
+          </p>
+          <a href="#tabela" class="text-blue-500 underline">Consulte a Tabela de Tamanhos</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Variações do Produto -->
+  <section class="py-16 bg-gray-200">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Escolha Sua Camiseta</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 shirt-container">
+        <div class="text-center">
+          <img src="camisa-preta.png" alt="Camiseta Preta" class="rounded-lg shadow-lg gallery-img mb-4">
+          <p class="text-lg font-semibold">Preto</p>
+        </div>
+        <div class="text-center">
+          <img src="camisa-branca.png" alt="Camiseta Branca" class="rounded-lg shadow-lg gallery-img mb-4">
+          <p class="text-lg font-semibold">Branco</p>
+        </div>
+      </div>
+      <div class="text-center mt-8">
+        <p class="text-lg font-semibold mb-4">Tamanhos Disponíveis: P, M, G, GG</p>
+        <a href="https://shopee.com.br/your-store" target="_blank" class="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800">Compre Agora</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção Sobre a Marca -->
+  <section id="sobre" class="py-16 bg-white">
+    <div class="container mx-auto px-1 text-center">
+      <h2 class="text-3xl font-bold mb-8">Sobre a Garuz</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
+        Produzida no Brasil, a Camiseta Garuz reflete qualidade e apoio à economia local. Nosso compromisso é oferecer produtos que unem design, conforto e durabilidade para o homem moderno.
+      </p>
+      <img src="logo-azul.jpg" alt="Logo Garuz" class="logo mx-auto mb-6">
+    </div>
+  </section>
+
+  <!-- Seção Tabela de Tamanhos -->
+  <section id="tabela" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">Tabela de Tamanhos</h2>
+      <img src="tamanho.jpg" alt="Tabela de Tamanhos" class="size-chart rounded-lg shadow-lg">
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="bg-black text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4">© 2025 Garuz Shop. Todos os direitos reservados.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="https://shopee.com.br/your-store" target="_blank" class="hover:text-gray-300">Shopee</a>
+        <a href="#" class="hover:text-gray-300">Instagram</a>
+        <a href="#" class="hover:text-gray-300">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript para interatividade -->
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

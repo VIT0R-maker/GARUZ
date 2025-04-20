@@ -1,0 +1,137 @@
+.hero-bg {
+  background-image: url('path-to-model-image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-img {
+  width: 502px;
+  height: 633px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logo {
+  width: 125px;
+  height: auto;
+}
+
+.size-chart {
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.shirt-container {
+  transform: none;
+  margin-left: 50px;
+}
+
+.shirt-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .shirt-container {
+    transform: none;
+    margin-left: 0;
+  }
+
+  .hero-bg {
+    height: 50vh;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .md\:w-1\/2 {
+    width: 100%;
+  }
+
+  .gallery-img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+
+  .text-3xl {
+    font-size: 1.875rem;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .text-xl {
+    font-size: 1.25rem;
+  }
+
+  .text-lg {
+    font-size: 1.125rem;
+  }
+
+  .py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .space-x-6 > * + * {
+    margin-left: 1.5rem;
+  }
+
+  .hero-bg div {
+    padding: 2rem;
+  }
+
+  .hero-bg h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-bg p {
+    font-size: 1.25rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
