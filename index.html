@@ -1,128 +1,695 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Garuz - Loja Virtual Shopee</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garuz - Camiseta Minimalista 100% Algodão</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .carousel {
+            width: 90%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .carousel-item img {
+            height: 600px;
+            object-fit: contain;
+        }
+        
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10;
+            color: #000;
+        }
+        
+        .carousel-control.prev {
+            left: 10px;
+        }
+        
+        .carousel-control.next {
+            right: 10px;
+        }
+        
+        .dark .carousel-control {
+            color: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 400px;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .dark ::-webkit-scrollbar-track {
+            background: #333;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+        
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+        
+        /* Smooth theme transition */
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Pulse animation for CTA */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease forwards;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 font-sans">
-  <!-- Cabeçalho -->
-  <header class="bg-black text-white py-4">
-    <div class="container mx-auto px-4 flex justify-between items-center">
-      <div>
-        <img src="logo.png" alt="Logo Garuz" class="logo">
-      </div>
-      <nav>
-        <a href="#home" class="px-4 hover:text-gray-300">Início</a>
-        <a href="#produto" class="px-4 hover:text-gray-300">Produto</a>
-        <a href="#sobre" class="px-4 hover:text-gray-300">Sobre</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Seção Hero -->
-  <section id="home" class="hero-bg h-screen flex items-center justify-center text-center text-white">
-    <div class="bg-black bg-opacity-60 p-8 rounded-lg">
-      <h1 class="text-5xl font-bold mb-4">Camiseta Garuz Minimalista</h1>
-      <p class="text-xl mb-6">Estilo Urbano e Conforto Total</p>
-      <a href="https://shopee.com.br/your-store" target="_blank" class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200">Compre Agora na Shopee</a>
-    </div>
-  </section>
-
-  <!-- Seção Detalhes do Produto -->
-  <section id="produto" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Camiseta Masculina Garuz Minimalista</h2>
-      <div class="flex flex-col md:flex-row items-center gap-8">
-        <div class="w-full md:w-1/2">
-          <img src="camisa-preta.png" alt="Camiseta Preta" class="rounded-lg shadow-lg gallery-img">
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="logo.png" alt="Logo Garuz" class="h-12 w-auto">
+                <h1 class="text-xl font-bold hidden sm:block">GARUZ</h1>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Início</a>
+                <a href="#product" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Produto</a>
+                <a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Sobre</a>
+                <a href="#sizes" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Tamanhos</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                </button>
+                
+                <a href="https://shopee.com.br/garuz" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium transition hidden sm:inline-block">
+                    Compre na Shopee
+                </a>
+                
+                <button class="md:hidden p-2" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
         </div>
-        <div class="w-full md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-4">Estilo Urbano e Conforto Total</h3>
-          <p class="text-gray-700 mb-4">
-            Descubra a Camiseta Masculina Garuz Minimalista, a peça perfeita para quem busca estilo e conforto no dia a dia. Feita com 100% algodão de alta qualidade, ela oferece um toque macio, leveza e respirabilidade, ideal para o clima brasileiro.
-          </p>
-          <ul class="list-disc list-inside text-gray-700 mb-6">
-            <li>Material: 100% Algodão</li>
-            <li>Estampa: DTF de alta qualidade</li>
-            <li>Modelagem: Slim fit</li>
-            <li>Cores: Preto e Branco</li>
-            <li>Tamanhos: P, M, G, GG</li>
-          </ul>
-          <p class="text-gray-700 mb-4">
-            <strong>Preço:</strong> De R$55,00 por <strong>R$41,80 (24% OFF)</strong><br>
-            <strong>Estoque Limitado!</strong>
-          </p>
-          <a href="#tabela" class="text-blue-500 underline">Consulte a Tabela de Tamanhos</a>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="py-2 hover:text-blue-600 dark:hover:text-blue-400 transition">Início</a>
+                <a href="#product" class="py-2 hover:text-blue-600 dark:hover:text-blue-400 transition">Produto</a>
+                <a href="#about" class="py-2 hover:text-blue-600 dark:hover:text-blue-400 transition">Sobre</a>
+                <a href="#sizes" class="py-2 hover:text-blue-600 dark:hover:text-blue-400 transition">Tamanhos</a>
+                <a href="https://shopee.com.br/garuz" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-medium text-center transition">
+                    Compre na Shopee
+                </a>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Seção Variações do Produto -->
-  <section class="py-16 bg-gray-200">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Escolha Sua Camiseta</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 shirt-container">
-        <div class="text-center">
-          <img src="camisa-preta.png" alt="Camiseta Preta" class="rounded-lg shadow-lg gallery-img mb-4">
-          <p class="text-lg font-semibold">Preto</p>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-gray-700 overflow-hidden fade-in">
+        <div class="absolute inset-0 bg-black/30 z-10"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+            <img src="camisa-preta.png" alt="Camiseta Garuz" class="h-full w-full object-cover opacity-70">
         </div>
-        <div class="text-center">
-          <img src="camisa-branca.png" alt="Camiseta Branca" class="rounded-lg shadow-lg gallery-img mb-4">
-          <p class="text-lg font-semibold">Branco</p>
+        
+        <div class="container mx-auto px-4 relative z-20 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Camiseta Garuz Minimalista</h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">Estilo urbano e conforto total em 100% algodão</p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#product" class="bg-white text-gray-900 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition">
+                    Conheça o Produto
+                </a>
+                <a href="https://shopee.com.br/garuz" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg transition pulse">
+                    Compre Agora <span class="line-through opacity-70">R$55,00</span> R$41,80
+                </a>
+            </div>
         </div>
-      </div>
-      <div class="text-center mt-8">
-        <p class="text-lg font-semibold mb-4">Tamanhos Disponíveis: P, M, G, GG</p>
-        <a href="https://shopee.com.br/your-store" target="_blank" class="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800">Compre Agora</a>
-      </div>
-    </div>
-  </section>
+        
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center z-20">
+            <a href="#product" class="animate-bounce text-white">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
 
-  <!-- Seção Sobre a Marca -->
-  <section id="sobre" class="py-16 bg-white">
-    <div class="container mx-auto px-1 text-center">
-      <h2 class="text-3xl font-bold mb-8">Sobre a Garuz</h2>
-      <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-6">
-        Produzida no Brasil, a Camiseta Garuz reflete qualidade e apoio à economia local. Nosso compromisso é oferecer produtos que unem design, conforto e durabilidade para o homem moderno.
-      </p>
-      <img src="logo-azul.jpg" alt="Logo Garuz" class="logo mx-auto mb-6">
-    </div>
-  </section>
+    <!-- Product Section -->
+    <section id="product" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Camiseta Masculina Garuz Minimalista</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- Carousel -->
+                <div class="lg:w-1/2">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-2">Selecione a cor:</h3>
+                        <div class="flex space-x-4">
+                            <button class="color-selector active" data-color="black">
+                                <div class="w-12 h-12 bg-black rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                                <span class="text-sm mt-1">Preto</span>
+                            </button>
+                            <button class="color-selector" data-color="white">
+                                <div class="w-12 h-12 bg-gray-200 rounded-full border-2 border-gray-300 dark:border-gray-600"></div>
+                                <span class="text-sm mt-1">Branco</span>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Black carousel -->
+                    <div class="carousel black-carousel active">
+                        <div class="carousel-inner">
+                            <div class="carousel-item">
+                                <img src="camisa-preta.png" alt="Camiseta Preta - Frente" class="product-image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="camisa-preta-costas.png" alt="Camiseta Preta - Costas" class="product-image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="close-estampa-preta.png" alt="Camiseta Preta - Estampa" class="product-image">
+                            </div>
+                        </div>
+                        <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <!-- White carousel -->
+                    <div class="carousel white-carousel hidden">
+                        <div class="carousel-inner">
+                            <div class="carousel-item">
+                                <img src="camisa-branca.png" alt="Camiseta Branca - Frente" class="product-image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="camisa-branca-costas.png" alt="Camiseta Branca - Costas" class="product-image">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="close-estampa-branca.png" alt="Camiseta Branca - Estampa" class="product-image">
+                            </div>
+                        </div>
+                        <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                
+                <!-- Product Info -->
+                <div class="lg:w-1/2">
+                    <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                        <div class="flex justify-between items-start mb-6">
+                            <div>
+                                <h3 class="text-2xl font-bold">Camiseta Garuz Minimalista</h3>
+                                <p class="text-gray-600 dark:text-gray-400">Estilo Urbano - 100% Algodão</p>
+                            </div>
+                            <div class="text-right">
+                                <span class="text-gray-500 line-through">R$55,00</span>
+                                <div class="text-3xl font-bold text-blue-600">R$41,80</div>
+                                <span class="text-sm bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-2 py-1 rounded-full">24% OFF</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold mb-2">Tamanho:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <button class="size-selector active" data-size="P">P</button>
+                                <button class="size-selector" data-size="M">M</button>
+                                <button class="size-selector" data-size="G">G</button>
+                                <button class="size-selector" data-size="GG">GG</button>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="font-semibold mb-2">Descrição:</h4>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">
+                                A Camiseta Masculina Garuz Minimalista é ideal para quem busca estilo e conforto no dia a dia. 
+                                Feita em 100% algodão de alta qualidade, oferece toque macio, leveza e respirabilidade, perfeita para o clima brasileiro.
+                            </p>
+                            
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Material: 100% Algodão – conforto e durabilidade garantidos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Estampa: DTF de alta qualidade, resistente a lavagens</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Modelagem: Slim fit, valorizando a silhueta sem apertar</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                    <span>Versatilidade para combinar com jeans, shorts ou calças sociais</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="flex-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-200 py-3 px-6 rounded-lg font-medium transition flex items-center justify-center">
+                                <i class="far fa-heart mr-2"></i> Favoritar
+                            </button>
+                            <a href="https://shopee.com.br/garuz" target="_blank" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-medium transition flex items-center justify-center">
+                                <i class="fas fa-shopping-cart mr-2"></i> Comprar Agora
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Seção Tabela de Tamanhos -->
-  <section id="tabela" class="py-16 bg-gray-100">
-    <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-8">Tabela de Tamanhos</h2>
-      <img src="tamanho.jpg" alt="Tabela de Tamanhos" class="size-chart rounded-lg shadow-lg">
-    </div>
-  </section>
+    <!-- Features Section -->
+    <section class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Por que escolher a Garuz?</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Produzida no Brasil, a Camiseta Garuz reflete qualidade e apoio à economia local</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-blue-600 dark:text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">100% Algodão</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Tecido respirável e macio, ideal para o verão brasileiro, proporcionando conforto em qualquer ocasião.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-medal text-blue-600 dark:text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Qualidade Premium</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Estampa em DTF de alta resistência e costura reforçada para maior durabilidade em cada lavagem.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 dark:bg-gray-700 p-8 rounded-xl text-center hover:shadow-lg transition">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-tshirt text-blue-600 dark:text-blue-400 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Estilo Versátil</h3>
+                    <p class="text-gray-600 dark:text-gray-400">
+                        Design minimalista que combina com diversos looks, do casual ao social, valorizando sua silhueta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Rodapé -->
-  <footer class="bg-black text-white py-8">
-    <div class="container mx-auto px-4 text-center">
-      <p class="mb-4">© 2025 Garuz Shop. Todos os direitos reservados.</p>
-      <div class="flex justify-center space-x-6">
-        <a href="https://shopee.com.br/your-store" target="_blank" class="hover:text-gray-300">Shopee</a>
-        <a href="#" class="hover:text-gray-300">Instagram</a>
-        <a href="#" class="hover:text-gray-300">Facebook</a>
-      </div>
-    </div>
-  </footer>
+    <!-- Size Guide Section -->
+    <section id="sizes" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tabela de Tamanhos</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">Encontre o tamanho perfeito para você</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg">
+                <img src="tamanho.jpg" alt="Tabela de Tamanhos Garuz" class="w-full h-auto rounded-lg">
+                
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Como medir:</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-ruler mr-3 mt-1 text-blue-600"></i>
+                                <span>Meça a circunferência do peito na parte mais larga</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ruler mr-3 mt-1 text-blue-600"></i>
+                                <span>Para o comprimento, meça da gola até a barra</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-ruler mr-3 mt-1 text-blue-600"></i>
+                                <span>Meça a largura dos ombros de ponta a ponta</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">Dicas:</h3>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle mr-3 mt-1 text-blue-600"></i>
+                                <span>Se estiver entre dois tamanhos, recomendamos escolher o maior</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle mr-3 mt-1 text-blue-600"></i>
+                                <span>Nossas camisetas têm modelagem slim fit</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-info-circle mr-3 mt-1 text-blue-600"></i>
+                                <span>Para dúvidas, entre em contato conosco</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- JavaScript para interatividade -->
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <img src="logo-azul.jpg" alt="Sobre a Garuz" class="w-full max-w-md mx-auto rounded-lg shadow-lg">
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Sobre a Garuz</h2>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6">
+                        A Garuz nasceu da paixão por moda masculina que combina estilo, conforto e qualidade. 
+                        Nossa missão é oferecer peças essenciais para o guarda-roupa do homem moderno, com 
+                        designs minimalistas e atemporais.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Produção Nacional</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Todas as nossas peças são produzidas no Brasil, apoiando a indústria têxtil nacional.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-full mr-4">
+                                <i class="fas fa-star text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Compromisso com Qualidade</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Selecionamos cuidadosamente materiais e processos para garantir a melhor experiência.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 dark:bg-blue-900/30 p-2 rounded-full mr-4">
+                                <i class="fas fa-heart text-blue-600 dark:text-blue-400"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Estilo com Propósito</h4>
+                                <p class="text-gray-600 dark:text-gray-400">
+                                    Acreditamos que moda deve ser prática, durável e expressar personalidade.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Estoque Limitado - Garanta a Sua!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Aproveite o desconto de 24% e eleve seu guarda-roupa com uma camiseta que une design, conforto e durabilidade.
+            </p>
+            <a href="https://shopee.com.br/garuz" target="_blank" class="inline-block bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full font-bold text-lg transition shadow-lg hover:shadow-xl">
+                Compre Agora na Shopee <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <img src="logo-azul.jpg" alt="Logo Garuz" class="h-12 w-auto mb-4">
+                    <p class="mb-4">
+                        Moda masculina minimalista com qualidade e estilo para o homem moderno.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-white transition">Início</a></li>
+                        <li><a href="#product" class="hover:text-white transition">Produto</a></li>
+                        <li><a href="#about" class="hover:text-white transition">Sobre</a></li>
+                        <li><a href="#sizes" class="hover:text-white transition">Tamanhos</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Informações</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white transition">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white transition">Termos de Serviço</a></li>
+                        <li><a href="#" class="hover:text-white transition">Trocas e Devoluções</a></li>
+                        <li><a href="#" class="hover:text-white transition">Perguntas Frequentes</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Contato</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope mr-2 mt-1"></i>
+                            <span>contato@garuz.com.br</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt mr-2 mt-1"></i>
+                            <span>(11) 98765-4321</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mr-2 mt-1"></i>
+                            <span>São Paulo - SP, Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Garuz. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or use system preference
+        const savedTheme = localStorage.getItem('theme') || 
+                         (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        html.classList.add(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
         });
-      });
-    });
-  </script>
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Color selector
+        const colorSelectors = document.querySelectorAll('.color-selector');
+        const blackCarousel = document.querySelector('.black-carousel');
+        const whiteCarousel = document.querySelector('.white-carousel');
+        
+        colorSelectors.forEach(selector => {
+            selector.addEventListener('click', () => {
+                colorSelectors.forEach(s => s.classList.remove('active'));
+                selector.classList.add('active');
+                
+                const color = selector.getAttribute('data-color');
+                if (color === 'black') {
+                    blackCarousel.classList.remove('hidden');
+                    blackCarousel.classList.add('active');
+                    whiteCarousel.classList.add('hidden');
+                    whiteCarousel.classList.remove('active');
+                } else {
+                    blackCarousel.classList.add('hidden');
+                    blackCarousel.classList.remove('active');
+                    whiteCarousel.classList.remove('hidden');
+                    whiteCarousel.classList.add('active');
+                }
+            });
+        });
+        
+        // Size selector
+        const sizeSelectors = document.querySelectorAll('.size-selector');
+        
+        sizeSelectors.forEach(selector => {
+            selector.addEventListener('click', () => {
+                sizeSelectors.forEach(s => s.classList.remove('active'));
+                selector.classList.add('active');
+            });
+        });
+        
+        // Initialize carousels
+        function initCarousel(carousel) {
+            const inner = carousel.querySelector('.carousel-inner');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const prevBtn = carousel.querySelector('.prev');
+            const nextBtn = carousel.querySelector('.next');
+            
+            let currentIndex = 0;
+            const itemCount = items.length;
+            
+            function updateCarousel() {
+                inner.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+            
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + itemCount) % itemCount;
+                updateCarousel();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % itemCount;
+                updateCarousel();
+            });
+            
+            // Start with first item
+            updateCarousel();
+        }
+        
+        // Initialize both carousels
+        initCarousel(blackCarousel);
+        initCarousel(whiteCarousel);
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Add fade-in animation to sections when they come into view
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
